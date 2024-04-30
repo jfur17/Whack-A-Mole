@@ -44,7 +44,6 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
-    cursor: url('../assets/Atomizer.png') 35 55, pointer;
 }
 
 .hole {
