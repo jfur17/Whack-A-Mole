@@ -10,6 +10,8 @@ let timer;
 let lastHole = 0;
 let points = 0;
 let difficulty = "easy";
+let musicB = document.getElementById("backgroundSound");
+let hit = document.getElementById("bonk");
 
 /**
  * Generates a random integer within a range.
@@ -212,8 +214,9 @@ function startTimer() {
  * the moles.
  *
  */
-function whack(mole) {
+function whack() {
     updateScore();
+    hit.play();
     return points;
 }
 
@@ -246,8 +249,9 @@ function setDuration(duration) {
  * timer using clearInterval. Returns "game stopped".
  *
  */
+
 function stopGame() {
-    //stopAudio(song);  //optional
+    musicB.pause();
     clearInterval(timer);
     return "game stopped";
 }
@@ -262,8 +266,10 @@ function startGame() {
     setDuration(10);
     clearScore();
     startTimer();
+    musicB.play();
     showUp();
     setEventListeners();
+
     return "game started";
 }
 
